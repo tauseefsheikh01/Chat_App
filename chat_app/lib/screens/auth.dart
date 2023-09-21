@@ -1,5 +1,3 @@
-// ignore_for_file: use_build_context_synchronously
-
 import 'dart:io';
 
 import 'package:chat_app/widgets/user_image_picker.dart';
@@ -72,7 +70,9 @@ class _AuthScreenState extends State<AuthScreen> {
       if (error.code == 'email-already-in-use') {
         // ...
       }
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).clearSnackBars();
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(error.message ?? 'Authentication failed.'),

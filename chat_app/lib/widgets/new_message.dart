@@ -20,12 +20,13 @@ class _NewMessageState extends State<NewMessage> {
     super.dispose();
   }
 
-  Future<void> _submitMessage() async {
+  void _submitMessage() async {
     final enteredMessage = _messageController.text;
 
     if (enteredMessage.trim().isEmpty) {
       return;
     }
+
     FocusScope.of(context).unfocus();
     _messageController.clear();
 
